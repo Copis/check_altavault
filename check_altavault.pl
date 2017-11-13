@@ -18,8 +18,7 @@ my $netapp_altavault_health_integrity = "$netapp_altavault.2.3.0";
 
 #Check Altavault Health
 sub get_health{
-	#my ($sess, $err) = Net::SNMP->session( -hostname => $server, -community => $comm, -version => '2' -timeout => $timeout);
-	my $session = Net::SNMP->session( -hostname => '172.29.224.102', -community => 'AVA_Community', -version => '2');
+	my $session = Net::SNMP->session( -hostname => $server, -community => $community, -version => '2' );
 	if (!defined($session)){
 		print "UNKNOWN: Cannot open SNMP session";
 		exit(3);
